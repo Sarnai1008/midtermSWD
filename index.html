@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Midterm</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            font-size: 1rem;
+            line-height: 1.6;
+            width: 95vw;
+            height: 95vh;
+            padding: 2%;
+            box-sizing: border-box;
+            background-color: #f4f7f6;
+            color: #333;
+        }
+        h1, h2, h3, h4, h5 {
+            color: #2c3e50;
+            margin: 10px 0;
+            text-align: center;
+        }
+        h1 {
+            font-size: 2.5rem;
+            font-weight: bold;
+        }
+        h2, h3 {
+            font-size: 1.5rem;
+        }
+        h4, h5 {
+            font-size: 1.2rem;
+        }
+        p {
+            font-size: 1rem;
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+        ul {
+            margin-left: 20px;
+            list-style-type: disc;
+        }
+        li {
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+        li strong {
+            color: #e74c3c;
+        }
+        audio {
+            display: none;
+        }
+      
+        @media (max-width: 768px) {
+            body {
+                padding: 5%;
+            }
+            h1 {
+                font-size: 2rem;
+            }
+            h2, h3 {
+                font-size: 1.3rem;
+            }
+            p, li {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Программ хангамжийн хөгжүүлэлт ICSI402</h1>
+    <h2>Явцын шалгалт</h2>
+    <p>Нэгэн амьтны фермийн эзэн өөрийн амьтдыг бүртгэдэг системтэй болохыг хүссэн бөгөөд доорх шаардлагыг тавьсан. Доорх шаардлагуудыг хангасан жава desktop апп хөгжүүлнэ үү.</p>
+
+    <h3>Системийн шаардлага:</h3>
+    <ul>
+        <li>Бүх амьтдын нэр, төрөл, нас, хүйс, эрүүл мэндийн байдал болон вакцинд хамрагдсан эсэх зэрэг үндсэн мэдээллийг бүртгэнэ. Амьтдын төрөл нь үхэр юмуу тахиа л гэсэн боломжтой байх. Амьтан тус бүрийн эрүүл мэндийн байдал өвчтэй, эрүүл гэсэн төлөвийн аль нэг байна.</li>
+        <li>Бүх амьтадыг насаар нь эрэмбэлэх боломжтой байна.</li>
+        <li>Үхэрнүүдийн хувьд сүүлийн саалийн хэмжээ (литрээр), жинг (килограммаар) бүртгэдэг байна. Хэрвээ эр үхэр байвал саалийн хэмжээ 0 байна.</li>
+        <li>Нийт үхэрнүүдийн дундаж жинг тооцдог байна.</li>
+        <li>Тахиануудын хувьд өндөгний тоо буюу өдөрт гаргаж байгаа өндөгний тоо болон өндөгний хэмжээ (жижиг, дунд, том) -г бүртгэнэ. Хэрвээ эр тахиа байвал өндөгний тоо 0 байна.</li>
+        <li>Өдөрт бүх тахианаас нийт хэдэн өндөг гардгийг тооцдог байх.</li>
+        <li>Аппликейшн нь амьтадын мэдээллийг бүртгэх, устгах, өөрчлөх, жингээр нь эрэмбэлэн харуулдаг байна.</li>
+    </ul>
+
+    <h3>Дүгнэх зарчим:</h3>
+    <ul>
+        <li>Бизнес логикийг оновчтой гаргах буюу классын төрөл, хоорондын холбоосыг оновчтой гаргах. <strong>/5 оноо/</strong></li>
+        <li>MVC, Observer pattern-уудын аль нэгийг нь ашигласан байх. <strong>/5 оноо/</strong></li>
+        <li>Өгөгдлийн сан руу холбогдон, CRUD үйлдлүүдийг хийдэг байх. <strong>/5 оноо/</strong></li>
+        <li>Хэрэглэгчийн интерфейс зөв ажиллагаатай байх. <strong>/3 оноо/</strong></li>
+        <li>Бүх амьтдыг насаар нь эрэмбэлэх, үхэрнүүдийн дундаж жинг олох, өдөрт нийт хэдэн өндөг гардгийг боддог функцуудээс нэгийг сонгож тест бичнэ үү. <strong>/2 оноо/</strong></li>
+    </ul>
+
+    <audio id="ss-sound" src="./warning.mp3" preload="auto"></audio>
+    
+    <script>
+        document.addEventListener('copy', function() {
+            var audio = document.getElementById('ss-sound');
+            audio.currentTime = 0; 
+            audio.play().catch(function(error) {
+                console.error("Sound playback failed", error);
+            });
+            alert('Copy action detected!');
+        });
+
+        window.onbeforeprint = function() {
+            var audio = document.getElementById('ss-sound');
+            audio.currentTime = 0; 
+            audio.play().catch(function(error) {
+                console.error("Sound playback failed", error);
+            });
+            alert('Print action detected!');
+        };
+
+        document.addEventListener('keydown', function(event) {
+            if ( event.key === 'PrintScreen' || event.ctrlKey && event.shiftKey && event.key === 'S') {
+                var audio = document.getElementById('ss-sound');
+                audio.currentTime = 0;
+                audio.play().catch(function(error) {
+                    console.error("Sound playback failed", error);
+                });
+                alert('Custom Screenshot shortcut detected!');
+            }
+            if (event.metaKey && event.shiftKey && event.key === '5') {
+                var audio = document.getElementById('ss-sound');
+                audio.currentTime = 0;
+                audio.play().catch(function(error) {
+                    console.error("Sound playback failed", error);
+                });
+                alert('Cmd + Shift + 5 shortcut detected (Mac)!');
+            }
+        });
+    </script>
+
+</body>
+</html>
