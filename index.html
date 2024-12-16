@@ -70,17 +70,15 @@
 <body>
 
     <h1>Программ хангамжийн хөгжүүлэлт ICSI402</h1>
-    <h2>Явцын шалгалт</h2>
+    <h2>Явц2 шалгалт</h2>
 	<h3>Санамж:</h3>
     <ul>
 		<li>Нийт: <strong>20 оноо</strong></li>
-        <li>Нийт хугацаа: <strong>135 минут</strong></li>
-        <li>Хуураад баригдвал: <strong>0 оноо </strong></li>
-        <li>Ашиглахыг хориглох зүйлс: <strong>Large Language Model, chat</strong></li>
+        <li>Ашиглахыг хориглох зүйлс: <strong>LLM</strong></li>
         <li>Ашиглахыг зөвшөөрөх зүйлс: <strong>Документ, stack overflow, лекц, лекцийн тэмдэглэл</strong></li> 
     </ul>
 	 <h3>Системийн шаардлага:</h3>
-    <p>Нэгэн сургалтын газрын менежер өөрийн сургалтын орчинг хянадаг системтэй болохыг хүссэн бөгөөд доорх шаардлагыг тавьсан. Доорх шаардлагуудыг хангасан жава desktop апп хөгжүүлнэ үү.</p>
+    <p>Нэгэн сургалтын газрын менежер өөрийн сургалтын орчинг хянадаг системтэй болохыг хүссэн бөгөөд доорх шаардлагыг тавьсан. Доорх шаардлагуудыг хангасан динамик веб апп хөгжүүлнэ үү.</p>
     <ul>
         <li>Бүх хүмүүсийн нэр, овог, нас, хүйс, албан тушаал зэрэг үндсэн мэдээллийг бүртгэнэ. Албан тушаал нь багш эсвэл сурагч л  байна.</li>
         <li>Бүх хүмүүсийг насаар нь эрэмбэлэх боломжтой байна.</li>
@@ -100,46 +98,5 @@
         <li>Бүх хүмүүсийг насаар нь эрэмбэлэх, дүнгийн дундаж  олох, нийт цалин тавихад гарах зардлыг боддог функцуудээс нэгийг сонгож тест бичнэ үү. <strong>/2 оноо/</strong></li>
     </ul>
 		<br/>
-    <audio id="ss-sound" src="./warning.mp3" preload="auto"></audio>
-    
-    <script>
-        document.addEventListener('copy', function() {
-            var audio = document.getElementById('ss-sound');
-            audio.currentTime = 0; 
-            audio.play().catch(function(error) {
-                console.error("Sound playback failed", error);
-            });
-            alert('Copy action detected!');
-        });
-
-        window.onbeforeprint = function() {
-            var audio = document.getElementById('ss-sound');
-            audio.currentTime = 0; 
-            audio.play().catch(function(error) {
-                console.error("Sound playback failed", error);
-            });
-            alert('Print action detected!');
-        };
-
-        document.addEventListener('keydown', function(event) {
-            if ( event.key === 'PrintScreen' || event.ctrlKey && event.shiftKey && event.key === 'S') {
-                var audio = document.getElementById('ss-sound');
-                audio.currentTime = 0;
-                audio.play().catch(function(error) {
-                    console.error("Sound playback failed", error);
-                });
-                alert('Custom Screenshot shortcut detected!');
-            }
-            if (event.metaKey && event.shiftKey && event.key === '5') {
-                var audio = document.getElementById('ss-sound');
-                audio.currentTime = 0;
-                audio.play().catch(function(error) {
-                    console.error("Sound playback failed", error);
-                });
-                alert('Cmd + Shift + 5 shortcut detected (Mac)!');
-            }
-        });
-    </script>
-
 </body>
 </html>
